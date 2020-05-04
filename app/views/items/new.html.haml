@@ -10,13 +10,12 @@
             %h2.titleContainer__required 必須
           %p.top_text_details 最大10枚までアップロードできます
          
-          = form.fields_for :item_images do |image|
-            = image.file_field :image, class: "style_form"
+          .image__form{id: "image-box"}
             %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
-         
-          = form.fields_for :item_images do |image|
-            = image.file_field :image, class: "style_form"
-            %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+            = form.fields_for :item_images do |image| 
+              = image.file_field :image, class: "style__form"
+              .data-index="image.index", class: "js-file_group"
+ 
 
           -# .style_form
           -#   %br/
